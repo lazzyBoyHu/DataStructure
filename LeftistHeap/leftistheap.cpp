@@ -39,3 +39,12 @@ Node * innerMerge(Node * one_heap, Node * other_heap)
     }
     return one_heap;
 }
+
+Node * RemoveMinNode(Node * root_node)
+{
+    if (root_node == nullptr)
+        return nullptr;
+    else
+        root_node = Merge(root_node->lelfChild, root_node->righChild);
+    return root_node;
+}

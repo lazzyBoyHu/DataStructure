@@ -5,7 +5,6 @@ struct Node
 {
     Node *lelfChild;
     Node *righChild;
-    Node *parents;
     int distance;
     int value;
 };
@@ -20,7 +19,7 @@ bool Swap(Node * root_node);
 /**
  * 合并的内部方法
  * params: one_heap, other_heap分别为两个不同的左式堆
- * return: 返回一个左式堆，如果无法合并返回NULL
+ * return: 返回一个左式堆
  */
 Node * innerMerge(Node * one_heap, Node * other_heap);
 
@@ -30,5 +29,14 @@ Node * innerMerge(Node * one_heap, Node * other_heap);
  * return: 返回一个左式堆，如果无法合并返回NULL
  */
 Node * Merge(Node * one_heap, Node other_heap);
+
+/**
+ * 获取value最小的一个节点
+ * 由左式堆的性质可得根节点的value就是最小的，当获取到该节点后将该节点移出该堆，这时左右子堆就形成了两个独立的左式堆
+ * 将这两个左式堆进行合并就可以得到移出后的新堆
+ * params: root_node: 根节点
+ * return: 返回新生成的堆
+ */
+Node * RemoveMinNode(Node * root_node);
 
 #endif
