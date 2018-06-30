@@ -18,6 +18,7 @@ bool Swap(Node * root_node);
 
 /**
  * 合并的内部方法
+ * 和Merge共同通过递归完成两个堆得合并
  * params: one_heap, other_heap分别为两个不同的左式堆
  * return: 返回一个左式堆
  */
