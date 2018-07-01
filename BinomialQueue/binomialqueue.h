@@ -26,4 +26,11 @@ Node * initBinomialQueue(int length = MaxLength);
  */
 Node * merge(Node * one_queue, Node * other_queue, int length);
 
+/**
+ * 删除最小的节点
+ * 通过遍历整个数组, 找到最小的节点, 移除该节点，并将其子树依次合并到移除这一支后的树中
+ * params: queue: 需要移除最小元的二项队列
+ */
+void deleteMinNode(Node * queue);
+
 #endif
