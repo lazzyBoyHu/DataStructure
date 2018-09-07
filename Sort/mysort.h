@@ -102,4 +102,11 @@ class InsertionSort : BaseSort
         void sort();
 };
 
+class ShellSort : BaseSort
+{
+    public:
+        ShellSort();
+        void sort();
+};
+
 #endif

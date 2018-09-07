@@ -39,3 +39,29 @@ void InsertionSort::sort()
     }
 }
 //     -------------------   插入排序   ------------------
+
+
+//     -------------------   插入排序   ------------------
+ShellSort::ShellSort()
+{
+}
+
+void ShellSort::sort()
+{
+    int quanshu = 0;
+    for(int gap = length / 2; gap > 0; gap /= 2)
+    {
+        quanshu++;
+        std::cout << "--------第" << quanshu << "圈----------" << std::endl;
+        for(int i = gap; i < length; ++i)
+        {
+            int tmp = std::move(arr[i]);
+            int j = i;
+
+            for(; j >= gap && tmp < arr[j - gap]; j -= gap)
+                arr[j] = std::move(arr[j - gap]);
+            arr[j] = std::move(tmp);
+        }
+    }
+}
+//     -------------------   插入排序   ------------------
